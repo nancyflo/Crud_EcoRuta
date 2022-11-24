@@ -1,0 +1,32 @@
+#login-container {
+    margin-top: 0%;
+    background-color: rgb(255, 255, 255);
+}
+
+#login-container h2
+#login-container h3{
+    font-size: 3rem;
+    margin-bottom: .5em;
+}
+
+#login-container form{
+    background: radial-gradient(circle, rgba(197,228,237,1) 0%, rgba(249,255,254,1) 61%);
+    width: 500px;
+    border-radius: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#login-container button{
+    margin-top: 15px;
+    background-color: rgb(28, 159, 168);
+}
+
+#login-container .form-control{
+    width: 100%;
+}
+
+#login-container .form-label{
+    float:left;
+    cursor: pointer;
+}
