@@ -1,12 +1,10 @@
-//direccionamiento
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from '../login/login';
 import Registro from '../registro/registro';
-//import Inicio from '../inicio/inicio';
 import PrivateRoute from '../auth/privaterouter';
 import Planes from '../planes/planes';
-import empresas from '../emplesas/buscar';
+import empresas from '../empresas/inicioe';
 
 export default function AppRoutes () {
     return(
@@ -30,9 +28,3 @@ export default function AppRoutes () {
 
         );
 }
-
-// function Home(){
-//     return(
-//         <h2> Home</h2>
-//     )
-// }

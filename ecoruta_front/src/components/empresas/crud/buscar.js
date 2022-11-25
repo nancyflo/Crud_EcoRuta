@@ -1,8 +1,9 @@
 import React from "react";
 import { Container, Row} from "react-bootstrap";
-import { request } from "../helper/helper";
-import "./empresas.css";
-import DataGrid from '../grid/grid'
+import { request } from "../../helper/helper";
+import "../empresas.css";
+import DataGrid from '../../grid/grid'
+import Loading from "../../loading/loading"
 
 const columns = [
   {
@@ -40,7 +41,11 @@ const columns = [
 export default class EmpresasBuscar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      Loading: false,
+      idEmpresa: null,
+    };
+    this.onClickEditButton = this.onClickEditButton.bind(this);
   }
   
   componentDidMount() {
@@ -53,6 +58,12 @@ export default class EmpresasBuscar extends React.Component {
         console.log(error);
       });
   }
+
+  onClickEditButton(row) {
+    this.props.setIdEmpresa(row._id);
+    this.props.changeTab('editar');
+    
+}
   render() {
     
     return (
@@ -61,7 +72,9 @@ export default class EmpresasBuscar extends React.Component {
           <h1>Consultar empresas registradas</h1>
         </Row>
         <Row>
-        <DataGrid url="/empresas" columns={ columns }/>
+        <DataGrid url="/empresas" columns={ columns }
+        showEditButton={true}
+        onClickEditButton={this.onClickEditButton}/>
         </Row>
       </Container>
     );
